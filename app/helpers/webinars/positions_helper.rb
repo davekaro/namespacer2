@@ -1,0 +1,2 @@
+module Webinars::PositionsHelper
+end
