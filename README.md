@@ -11,7 +11,7 @@ rails db:migrate
 
 Now you are at https://github.com/davekaro/namespacer2/tree/140bf9d9d58314923f9ca6f453f89c11999906d2, and everything works great. Try a `rails test` and all is well.
 
-But, this is only because the fixtures defined in `fixtures/webinars/positions.yml` are loaded first, and since they have the same keys as the fixtures in `fixtures/webinars.yml`, they are overridden when that files is read. See https://github.com/rails/rails/blob/v6.0.3.3/activerecord/lib/active_record/fixtures.rb#L687 where that happens.
+But, this is only because the fixtures defined in [fixtures/webinars/positions.yml](https://github.com/davekaro/namespacer2/blob/140bf9d9d58314923f9ca6f453f89c11999906d2/test/fixtures/webinars/positions.yml) are loaded first, and since they have the same keys as the fixtures in [fixtures/webinars.yml](https://github.com/davekaro/namespacer2/blob/140bf9d9d58314923f9ca6f453f89c11999906d2/test/fixtures/webinars.yml) (`one:` and `two:`), they are overridden when that files is read. See https://github.com/rails/rails/blob/v6.0.3.3/activerecord/lib/active_record/fixtures.rb#L687 where that happens.
 
 So, if you add a new fixture to `fixtures/webinars/positions.yml` like https://github.com/davekaro/namespacer2/commit/73b150146ae6ef03e988a366c465d3df4a2b9380 and run `rails test` again, it blows up.
 
